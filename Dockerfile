@@ -10,6 +10,7 @@ COPY . /shaileshapp/
 WORKDIR /shaileshapp
 
 RUN dotnet build -o shaileshbin
+RUN dotnet publish -o shailesh_publish -p:AssemblyName=shaileshdotnet
 
 CMD ./shaileshbin/ashu-webapp  --urls=http://0.0.0.0:5000
 
