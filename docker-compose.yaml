@@ -4,3 +4,13 @@ services: # apps containers you want to build and run
     image: shaileshdotnetimg:v1  # image i want to build
     build: .  # path of dockerfile location -- . means current
     container_name: shaileshc1 # it will create container also
+  shaileshapp2: # creating httpd image and container
+    image: shaileshhttpd:version1
+    build:
+      context: .
+      dockerfile: shaileshhttpd.dockerfile
+    container_name: shaileshc2
+    ports:
+    - 3421:80  # you guys can use port between 1024 to 60000
+    depends_on:
+    - shaileshapp1
