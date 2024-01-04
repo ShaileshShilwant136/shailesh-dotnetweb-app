@@ -12,5 +12,5 @@ WORKDIR /shaileshapp
 RUN dotnet build -o shaileshbin
 RUN dotnet publish -o shailesh_publish -p:AssemblyName=shaileshdotnet
 
-CMD ./shaileshbin/shaileshdotnet  --urls=http://0.0.0.0:5000
+CMD ./shailesh_publish/shaileshdotnet  --urls=http://0.0.0.0:5000
 
